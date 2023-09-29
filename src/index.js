@@ -1,2 +1,2 @@
-const appElement = document.getElementById('app');
+const appElement = document.getElementById('iphone-wrapper');
 appElement.innerHTML = '<h1>Hello, iPhone!</h1>';
