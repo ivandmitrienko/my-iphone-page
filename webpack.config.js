@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -6,13 +7,17 @@ module.exports = {
   output: {
     path: __dirname + "/dist",
     filename: "bundle.js",
-    assetModuleFilename: path.join('images', '[name].[contenthash][ext]'),
+    assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },
@@ -27,19 +32,19 @@ module.exports = {
   ],
   optimization: {
     minimizer: [
-        new ImageMinimizerPlugin({
-            minimizer: {
-                implementation: ImageMinimizerPlugin.imageminMinify,
-                options: {
-                    plugins: [
-                        ['gifsicle', { interlaced: true }],
-                        ['jpegtran', { progressive: true }],
-                        ['optipng', { optimizationLevel: 5 }],
-                        ['svgo', { name: 'preset-default' }],
-                    ],
-                },
-            },
-        }),
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ["gifsicle", { interlaced: true }],
+              ["jpegtran", { progressive: true }],
+              ["optipng", { optimizationLevel: 5 }],
+              ["svgo", { name: "preset-default" }],
+            ],
+          },
+        },
+      }),
     ],
-},
+  },
 };
