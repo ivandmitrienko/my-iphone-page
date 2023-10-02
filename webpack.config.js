@@ -1,19 +1,20 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
   output: {
     path: __dirname + "/dist",
-    filename: "bundle.js",
+    filename: "[name].js",
     // assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
@@ -29,6 +30,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "public/index.html",
     }),
+    new MiniCssExtractPlugin(),
   ],
   optimization: {
     minimizer: [
