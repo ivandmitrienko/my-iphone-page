@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+}
+#iphone-wrapper {
+  height: 667px;
+  background: linear-gradient(
+      197deg,
+      rgba(0, 0, 0, 0) 10.43%,
+      rgba(21, 5, 52, 0.64) 30.66%,
+      rgba(0, 0, 0, 0.86) 37.66%,
+      rgba(9, 1, 25, 0.95) 45.57%,
+      rgba(0, 0, 0, 0.95) 77.38%,
+      rgba(5, 1, 14, 0.95) 94.32%
+    ),
+    linear-gradient(137deg, #da28ff 3.34%, #7fccff 92.15%),
+    no-repeat url("./images/Background.jpg");
+  background-blend-mode: multiply;
+}
+
+.iphone-status-bar {
+  padding: 3px 6px 0;
+  width: 100%;
+  height: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 97px;
+  & div {
+    font-family: "SFProTextRegular";
+    color: white;
+    font-size: 0.75rem;
+    height: 100%;
+  }
+  &__time {
+    font-family: "SFProTextSemibold";
+  }
+}
+.iphone-status-bar-group {
+  display: flex;
+  &__signal {
+    width: 1rem;
+    background: url("./images/MobileSignal.png") no-repeat;
+  }
+
+  &__carrier {
+    line-height: 10px;
+  }
+
+  &__wifi {
+    width: 0.88rem;
+    background: url("./images/Wifi.png") no-repeat;
+  }
+
+  &__bluetooth {
+    width: 6px;
+    background: url("./images/Bluetooth.png") no-repeat;
+  }
+
+  &__procent,
+  &__carrier {
+    margin: 0 0.25rem;
+  }
+
+  &__battery {
+    width: 27px;
+    background: url("./images/Battery.png") no-repeat;
+  }
+}
+
+h1{
+  font-family: "SFProTextHeavy";
+  text-align: center;
+  color: white;
+  font-size: 42px;
+  text-shadow: 0px 0px 48px rgba(4, 3, 26, 0.83);
+  line-height: 46px;
+  margin-bottom: 40px;
+}

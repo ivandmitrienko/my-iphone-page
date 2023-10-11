@@ -8,29 +8,43 @@ module.exports = {
   output: {
     path: __dirname + "/dist",
     filename: "[name].js",
-    // assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
+    assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
   },
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        test: /\.(scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
+      {
+        test: /\.(woff2?|eot|ttf|otf)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: path.join("fonts", "[name].[contenthash][ext]"),
+        },
+      },
     ],
   },
   devServer: {
     watchFiles: path.join(__dirname, "src"),
-    port: 3001,
+    port: 3000,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "public/index.html",
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
   ],
   optimization: {
     minimizer: [

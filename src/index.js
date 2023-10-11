@@ -1,4 +1,4 @@
-import "./style.css";
+import "./style.scss";
+import "./fonts/fonts.scss";
+import "./utility/clock.js";
 
-const appElement = document.getElementById('iphone-wrapper');
-appElement.innerHTML = '<h1>Hello, iPhone!</h1>';
