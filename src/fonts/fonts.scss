@@ -18,3 +18,10 @@
     font-weight: 860;
     src: local(""), /* Modern Browsers */ url("./SF-Pro-Text-Heavy.otf") format("opentype"),
 }
+
+@font-face {
+    font-family: "RobotoBolt";
+    font-style: normal;
+    font-weight: 700;
+    src: local(""), /* Modern Browsers */ url("./Roboto-Bold.ttf") format("truetype"),
+}
