@@ -1,41 +1,13 @@
 @font-face {
-    font-family: "SFProTextSemibold";
-    font-style: normal;
-    font-weight: 600;
-    src: local(""), /* Modern Browsers */ url("./SF-Pro-Text-Semibold.otf") format("opentype"),
+    font-family: "Roboto";
+    font-weight: 0 1000;
+    src: url("./Roboto(flexVariable).ttf") format('truetype');
+    font-display: swap;
 }
 
 @font-face {
-    font-family: "SFProTextRegular";
-    font-style: normal;
-    font-weight: 400;
-    src: local(""), /* Modern Browsers */ url("./SF-Pro-Text-Regular.otf") format("opentype"),
-}
-
-@font-face {
-    font-family: "SFProTextHeavy";
-    font-style: normal;
-    font-weight: 860;
-    src: local(""), /* Modern Browsers */ url("./SF-Pro-Text-Heavy.otf") format("opentype"),
-}
-
-@font-face {
-    font-family: "RobotoBolt";
-    font-style: normal;
-    font-weight: 700;
-    src: local(""), /* Modern Browsers */ url("./Roboto-Bold.ttf") format("truetype"),
-}
-
-@font-face {
-    font-family: "SFProDisplayRegular";
-    font-style: normal;
-    font-weight: 400;
-    src: local(""), /* Modern Browsers */ url("./SF-Pro-Display-Regular.otf") format("opentype"),
-}
-
-@font-face {
-    font-family: "SFProDisplaySemibold";
-    font-style: normal;
-    font-weight: 600;
-    src: local(""), /* Modern Browsers */ url("./SF-Pro-Display-Semibold.otf") format("opentype"),
+    font-family: "SF PRO";
+    font-weight: 0 1000;
+    src: url("./SF-Pro.ttf") format('truetype');
+    font-display: swap;
 }
