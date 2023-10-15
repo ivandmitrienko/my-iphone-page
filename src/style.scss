@@ -149,13 +149,14 @@ body {
     flex-direction: column;
     gap: 0.5rem;
     & > button {
+      font-family: "SF PRO";
       width: 100%;
       height: 3.5rem;
       border-radius: 2rem;
       border: 1px solid #fff;
       & div:nth-child(2) {
         text-align: left;
-        max-width: 4.1rem;
+        max-width: 4.3rem;
       }
       & span {
         display: block;
