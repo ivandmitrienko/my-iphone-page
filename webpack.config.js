@@ -4,19 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const EmbedI18nWebpackPlugin = require("embed-i18n-webpack-plugin");
 const path = require("path");
 
-const definitions = {
-  fr: {
-      greeting: {
-          hello: "Salut, monde.",
-      },
-  },
-  en: {
-      greeting: {
-          hello: "Hello, world.",
-      },
-      onlyEnglish: "This is fine.",
-  },
-};
+import { json } from "./src/utility/localTranslations/languages";
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
@@ -60,10 +48,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
-    new EmbedI18nWebpackPlugin(null, {
+    new EmbedI18nWebpackPlugin(json[(
+      window.navigator.userLanguage || window.navigator.language
+    ).substr(0, 2)], {
       funcName: "__t",
-      fallbackLangDefinition: definitions.en,
-      allLangDefinitions: definitions,
+      fallbackLangDefinition: json[en],
+      allLangDefinitions: json,
     }),
   ],
   optimization: {
@@ -84,4 +74,3 @@ module.exports = {
     ],
   },
 };
-
