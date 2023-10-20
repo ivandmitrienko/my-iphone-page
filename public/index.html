@@ -57,16 +57,16 @@
                 <button type="button">
                     <div class="access">
                         <span data-i18n class="access__period">YEARLY ACCESS</span>
-                        <span  data-i18n class="access__price">Just $39.99 per year</span>
+                        <span  data-i18n data-price="123" class="access__price">Just {{price}} per year</span>
                     </div>
-                    <div><span data-i18n class="access__price">$0.48 per <br>week</span></div>
+                    <div><span data-i18n class="access__price">{{price}} <br>per week</span></div>
                     <div><span data-i18n class="additional-button">BEST OFFER</span></div>
                 </button>
                 <button type="button">
                     <div class="access">
                         <span data-i18n class="access__period">WEEKLY ACCESS</span>
                     </div>
-                    <div><span data-i18n class="access__price">$6.99 <br>per week</span></div>
+                    <div><span data-i18n class="access__price">{{price}} <br>per week</span></div>
                 </button>
                 <button data-i18n type="button">Continue</button>
             </section>

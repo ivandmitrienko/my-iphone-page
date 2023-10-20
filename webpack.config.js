@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const EmbedI18nWebpackPlugin = require("embed-i18n-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -45,6 +46,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
+    new EmbedI18nWebpackPlugin(definitions.fr, {
+      funcName: "__t",
+      fallbackLangDefinition: definitions.en,
+      allLangDefinitions: definitions,
+  }),
   ],
   optimization: {
     minimizer: [

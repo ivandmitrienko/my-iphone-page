@@ -22,9 +22,59 @@ const localTranslations = {
   fr,
   es,
 };
-let elements = document.querySelectorAll('[data-i18n]');
 
-elements.forEach((el,i)=>{
-    const key = el.innerHTML;
-    console.log(key)
-})
+let elements = document.querySelectorAll("[data-i18n]");
+
+const json = localTranslations[pageLanguage];
+
+elements.forEach((el, i) => {
+  let text = el.innerHTML;
+  const variables = text.match(/{({.*?})}/g);
+  if (variables) {
+    console.log(el.dataset);
+    variables.forEach((variable) => {
+      // Filter all `data-*` attributes for this element to find the matching key.
+      Object.entries(el.dataset).filter(([key, value]) => {
+        // console.log(`{{${key}}}`)
+        if (`{{${key}}}` === variable) {
+          text = text.replace(
+            `${variable}`,
+            new Function(`return (${value})`)()
+          );
+          el.innerHTML = text;
+        }
+        //   try {
+        //     // Attempt to run actual JavaScript code.
+        //     text = text.replace(
+        //       `${variable}`,
+        //       new Function(`return (${value})`)()
+        //     );
+        //   } catch (error) {
+        //     // Probably just static text replacement.
+        //     text = text.replace(`${variable}`, value);
+        //   }
+        // }
+      });
+    });
+  }
+  // console.log(el.dataset)
+
+  // variables.forEach((variable) => {
+  //   if(variable) console.log(variable)
+  // })
+  // Filter all `data-*` attributes for this element to find the matching key.
+  //   Object.entries(el.dataset).filter(([key, value]) => {
+  //     if (`{${key}}` === variable) {
+  //       try {
+  //         // Attempt to run actual JavaScript code.
+  //         text = text.replace(`${variable}`, new Function(`return (${value})`)());
+  //       } catch (error) {
+  //         // Probably just static text replacement.
+  //         text = text.replace(`${variable}`, value);
+  //       }
+  //     }
+  //   })
+  // });
+  // const value = json[text];
+  // el.innerHTML = value;
+});
