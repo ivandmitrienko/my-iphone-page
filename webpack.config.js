@@ -1,10 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const EmbedI18nWebpackPlugin = require("embed-i18n-webpack-plugin");
 const path = require("path");
-
-import { json } from "./src/utility/localTranslations/languages";
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
@@ -47,13 +44,6 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
-    }),
-    new EmbedI18nWebpackPlugin(json[(
-      window.navigator.userLanguage || window.navigator.language
-    ).substr(0, 2)], {
-      funcName: "__t",
-      fallbackLangDefinition: json[en],
-      allLangDefinitions: json,
     }),
   ],
   optimization: {
