@@ -4,6 +4,20 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const EmbedI18nWebpackPlugin = require("embed-i18n-webpack-plugin");
 const path = require("path");
 
+const definitions = {
+  fr: {
+      greeting: {
+          hello: "Salut, monde.",
+      },
+  },
+  en: {
+      greeting: {
+          hello: "Hello, world.",
+      },
+      onlyEnglish: "This is fine.",
+  },
+};
+
 module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
   output: {
@@ -50,7 +64,7 @@ module.exports = {
       funcName: "__t",
       fallbackLangDefinition: definitions.en,
       allLangDefinitions: definitions,
-  }),
+    }),
   ],
   optimization: {
     minimizer: [
@@ -70,3 +84,6 @@ module.exports = {
     ],
   },
 };
+
+
+console.log(__t("greeting.hello"));
