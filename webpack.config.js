@@ -85,5 +85,3 @@ module.exports = {
   },
 };
 
-
-console.log(__t("greeting.hello"));
