@@ -60,7 +60,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
-    new EmbedI18nWebpackPlugin(definitions.fr, {
+    new EmbedI18nWebpackPlugin(null, {
       funcName: "__t",
       fallbackLangDefinition: definitions.en,
       allLangDefinitions: definitions,
