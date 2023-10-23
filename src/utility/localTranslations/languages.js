@@ -5,7 +5,7 @@ import ja from "./ja.json" assert { type: "json" };
 import fr from "./fr.json" assert { type: "json" };
 import es from "./es.json" assert { type: "json" };
 
-export default json = {
+export const languages = {
   de,
   en,
   pt,

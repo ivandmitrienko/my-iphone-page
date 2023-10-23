@@ -1,48 +1,58 @@
 import i18next from "i18next";
 import languageDetector from "i18next-browser-languagedetector";
+import { languages } from "./localTranslations/languages.js";
 
 window.i18next = i18next;
 
 const en = {
-    translation: {
-      hello_world: "hello world",
-      nested: {
-        key: "This key is was read from nested object",
-      },
-      great: "Hello {{name}}",
-    },
+    translation: languages.en,
   },
   de = {
-    translation: {
-      hello_world: "Witaj świecie",
-      nested: {
-        key: "Ten klucz został odczytany z zagnieżdzonego obiektu",
-      },
-      great: "Witaj {{name}}",
-    },
+    translation: languages.de,
   },
-  ru = {
-    translation: {
-      hello_world: "Hola mundo",
-      nested: {
-        key: "Esta clave se ha leído desde un objeto anidado",
-      },
-      great: "Hola {{name}}",
-    },
+  es = {
+    translation: languages.es,
+  },
+  pt = {
+    translation: languages.pt,
+  },
+  fr = {
+    translation: languages.fr,
+  },
+  ja = {
+    translation: languages.ja,
   };
+
+const options = {
+  order: ["querystring", "navigator"],
+  lookupQuerystring: "lng",
+};
 
 i18next
   .use(languageDetector)
   .init({
+    detection: options,
     resources: {
       en,
-      ru,
+      es,
+      fr,
       de,
+      ja,
+      pt,
     },
-    fallbackLng: "de",
+    ns: ["translation"],
+    defaultNS: "translation",
+    fallbackLng: en,
+    supportedLngs: ["pt", "en", "es", "fr", "de", "ja"],
+    interpolation: {
+      escapeValue: false,
+    },
+    debug: false,
   })
   .then((t) => {
-    console.log(t("hello_world"));
-    console.log(t("nested.key"));
-    console.log(t("great", { name: "Marcin" }));
+    document.querySelector("h1").innerHTML = i18next.t(
+      "Get Unlimited <br>Access"
+    );
+    // console.log(t("nested.key"));
+    // console.log(t("great", { name: "Marcin" }));
   });
