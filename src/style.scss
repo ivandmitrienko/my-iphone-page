@@ -131,7 +131,7 @@ body {
       font-variation-settings: "wght" 400;
       font-size: 11px;
       width: 27.85vw;
-      height: 21.98vh;
+      height: calc(var(--vh, 1vh) * 21.98);
       border-radius: 10.8px;
       color: #fff;
       & span {
@@ -143,8 +143,8 @@ body {
   &-buttons {
     display: flex;
     flex-direction: column;
-    gap: 1vh;
-    margin-bottom: 3vh;
+    gap: calc(var(--vh, 1vh) * 1);
+    margin-bottom: calc(var(--vh, 1vh) * 3);
     & > button {
       font-family: "SF PRO";
       width: 100%;
@@ -178,7 +178,7 @@ body {
         top: -24%;
         right: 7%;
         padding: 2px 21px 3px 21px;
-        max-width: 119px;
+        max-width: 7.4rem;
         width: 100%;
         color: #141131;
         font-family: "Roboto";
