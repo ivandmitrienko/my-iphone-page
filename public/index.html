@@ -38,11 +38,13 @@
             </div>
         </div>
         <div class="iphone-app">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M7.01053 6.59968L12.4165 1.19368L12.8144 1.59155L7.4084 6.99754L13 12.5892L12.5892 13L6.99754 7.4084L1.59155 12.8144L1.19368 12.4165L6.59968 7.01053L1 1.41085L1.41085 1L7.01053 6.59968Z"
-                    stroke="white" stroke-opacity="0.4" stroke-linejoin="round" />
-            </svg>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.01053 6.59968L12.4165 1.19368L12.8144 1.59155L7.4084 6.99754L13 12.5892L12.5892 13L6.99754 7.4084L1.59155 12.8144L1.19368 12.4165L6.59968 7.01053L1 1.41085L1.41085 1L7.01053 6.59968Z"
+                        stroke="white" stroke-opacity="0.4" stroke-linejoin="round" />
+                </svg>
+            </a>
             <h1 data-i18n>Get Unlimited <br>Access</h1>
             <section class="iphone-app-images">
                 <div class="iphone-app-images__item">
@@ -56,7 +58,7 @@
                 </div>
             </section>
             <section class="iphone-app-buttons">
-                <button type="button">
+                <button type="button" class="subscribe-button" data-email="https://www.apple.com">
                     <div class="access">
                         <span data-i18n class="access__period yearly-access">YEARLY ACCESS</span>
                         <span data-i18n data-price="39.99" class="access__price per-year">Just {{price}} per year</span>
@@ -65,7 +67,7 @@
                             week</span></div>
                     <div><span data-i18n class="additional-button">BEST OFFER</span></div>
                 </button>
-                <button type="button">
+                <button type="button" class="subscribe-button" data-email="https://google.com">
                     <div class="access">
                         <span data-i18n class="access__period weekly-access">WEEKLY ACCESS</span>
                     </div>
