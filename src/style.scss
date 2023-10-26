@@ -57,7 +57,24 @@ body {
   .iphone-app-images__item:last-child {
     background: top left/cover no-repeat url("./images/Avatars/f3@3x.png");
   }
+  .button-continue {
+    margin-top: calc(var(--vh, 1vh) * 1.1);
+    margin-bottom: calc(var(--vh, 1vh) * 3.1);
+  }
+
+  .iphone-home-indicator {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    height: calc(var(--vh, 1vh) * 0.6);
+    border-radius: 100px;
+    background: #fff;
+    width: 34.4vw;
+  }
 }
+
 #iphone-wrapper {
   font-family: "SF PRO";
   position: relative;
@@ -117,7 +134,6 @@ body {
 }
 
 .iphone-app {
-  margin: 0 auto;
   padding: 0 1.5rem;
   &-images {
     display: flex;
@@ -214,8 +230,8 @@ body {
   }
 
   &-cookies {
-   width: 70vw;
-   margin: 0 auto;
+    margin: 0 auto;
+    width: 70vw;
     & > ul {
       display: flex;
       justify-content: space-between;
