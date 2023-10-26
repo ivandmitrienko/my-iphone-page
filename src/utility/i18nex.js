@@ -40,14 +40,7 @@ i18next
       ja,
       pt,
     },
-    ns: ["translation"],
-    defaultNS: "translation",
-    fallbackLng: en,
-    supportedLngs: ["pt", "en", "es", "fr", "de", "ja"],
-    interpolation: {
-      escapeValue: false,
-    },
-    debug: false,
+    fallbackLng: "en",
   })
   .then((t) => {
     document.querySelector("h1").innerHTML = i18next.t(
