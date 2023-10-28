@@ -1,18 +1,18 @@
-import { i18n } from "./i18n.js";
-import { languages } from "./localTranslations/languages.js";
+import { i18n } from "./i18n.js"
+import { languages } from "./localTranslations/languages.js"
 
-export function searchLanguagePage() {
+export function searchLanguagePage () {
   const {
-    en, de, pt, ja, fr, es,
-  } = languages;
-  const availableLanguages = ["pt", "ja", "fr", "es", "en", "de"];
-  const defaultLanguage = "en";
+    en, de, pt, ja, fr, es
+  } = languages
+  const availableLanguages = ["pt", "ja", "fr", "es", "en", "de"]
+  const defaultLanguage = "en"
   const language = (
     window.navigator.userLanguage || window.navigator.language
-  ).substr(0, 2);
-  let pageLanguage = defaultLanguage;
+  ).substr(0, 2)
+  let pageLanguage = defaultLanguage
   if (availableLanguages.includes(language)) {
-    pageLanguage = language;
+    pageLanguage = language
   }
   const localTranslations = {
     de,
@@ -20,8 +20,8 @@ export function searchLanguagePage() {
     pt,
     ja,
     fr,
-    es,
-  };
-  const json = localTranslations[pageLanguage];
-  i18n(json);
+    es
+  }
+  const json = localTranslations[pageLanguage]
+  i18n(json)
 }

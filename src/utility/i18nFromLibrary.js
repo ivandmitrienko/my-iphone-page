@@ -1,34 +1,34 @@
-import i18next from "i18next";
-import languageDetector from "i18next-browser-languagedetector";
-import { languages } from "./localTranslations/languages.js";
-import { translateUseLibrary } from "./translateUseLibrary.js";
+import i18next from "i18next"
+import languageDetector from "i18next-browser-languagedetector"
+import { languages } from "./localTranslations/languages.js"
+import { translateUseLibrary } from "./translateUseLibrary.js"
 
-export function i18nFromLibrary() {
-  window.i18next = i18next;
+export function i18nFromLibrary () {
+  window.i18next = i18next
 
   const en = {
-    translation: languages.en,
-  };
+    translation: languages.en
+  }
   const de = {
-    translation: languages.de,
-  };
+    translation: languages.de
+  }
   const es = {
-    translation: languages.es,
-  };
+    translation: languages.es
+  }
   const pt = {
-    translation: languages.pt,
-  };
+    translation: languages.pt
+  }
   const fr = {
-    translation: languages.fr,
-  };
+    translation: languages.fr
+  }
   const ja = {
-    translation: languages.ja,
-  };
+    translation: languages.ja
+  }
 
   const options = {
     order: ["querystring", "navigator"],
-    lookupQuerystring: "lng",
-  };
+    lookupQuerystring: "lng"
+  }
 
   i18next
     .use(languageDetector)
@@ -40,11 +40,11 @@ export function i18nFromLibrary() {
         fr,
         de,
         ja,
-        pt,
+        pt
       },
-      fallbackLng: "en",
+      fallbackLng: "en"
     })
     .then((t) => {
-      translateUseLibrary(t);
-    });
+      translateUseLibrary(t)
+    })
 }

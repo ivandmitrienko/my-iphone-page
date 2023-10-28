@@ -1,14 +1,14 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const path = require("path")
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
   output: {
-    path: `${__dirname}/dist`,
+    path: path.join(__dirname, "dist"),
     filename: "[name].js",
-    assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
+    assetModuleFilename: path.join("images", "[name].[contenthash][ext]")
   },
   module: {
     rules: [
@@ -18,33 +18,33 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
-          "sass-loader",
-        ],
+          "sass-loader"
+        ]
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        type: "asset/resource"
       },
       {
         test: /\.(woff2?|eot|ttf|otf)$/i,
         type: "asset/resource",
         generator: {
-          filename: path.join("fonts", "[name].[contenthash][ext]"),
-        },
-      },
-    ],
+          filename: path.join("fonts", "[name].[contenthash][ext]")
+        }
+      }
+    ]
   },
   devServer: {
     watchFiles: path.join(__dirname, "src"),
-    port: 3000,
+    port: 3000
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "public/index.html",
+      template: "public/index.html"
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-    }),
+      filename: "[name].css"
+    })
   ],
   optimization: {
     minimizer: [
@@ -56,11 +56,11 @@ module.exports = {
               ["gifsicle", { interlaced: true }],
               ["jpegtran", { progressive: true }],
               ["optipng", { optimizationLevel: 5 }],
-              ["svgo", { name: "preset-default" }],
-            ],
-          },
-        },
-      }),
-    ],
-  },
-};
+              ["svgo", { name: "preset-default" }]
+            ]
+          }
+        }
+      })
+    ]
+  }
+}
