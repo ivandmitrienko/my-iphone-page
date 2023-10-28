@@ -7,23 +7,23 @@ export function i18nFromLibrary() {
   window.i18next = i18next;
 
   const en = {
-      translation: languages.en,
-    },
-    de = {
-      translation: languages.de,
-    },
-    es = {
-      translation: languages.es,
-    },
-    pt = {
-      translation: languages.pt,
-    },
-    fr = {
-      translation: languages.fr,
-    },
-    ja = {
-      translation: languages.ja,
-    };
+    translation: languages.en,
+  };
+  const de = {
+    translation: languages.de,
+  };
+  const es = {
+    translation: languages.es,
+  };
+  const pt = {
+    translation: languages.pt,
+  };
+  const fr = {
+    translation: languages.fr,
+  };
+  const ja = {
+    translation: languages.ja,
+  };
 
   const options = {
     order: ["querystring", "navigator"],

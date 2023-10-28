@@ -2,10 +2,12 @@ import { i18n } from "./i18n.js";
 import { languages } from "./localTranslations/languages.js";
 
 export function searchLanguagePage() {
-  const { en, de, pt, ja, fr, es } = languages;
+  const {
+    en, de, pt, ja, fr, es,
+  } = languages;
   const availableLanguages = ["pt", "ja", "fr", "es", "en", "de"];
   const defaultLanguage = "en";
-  let language = (
+  const language = (
     window.navigator.userLanguage || window.navigator.language
   ).substr(0, 2);
   let pageLanguage = defaultLanguage;

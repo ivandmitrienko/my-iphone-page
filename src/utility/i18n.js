@@ -1,7 +1,7 @@
 export function i18n(json) {
-  let elements = document.querySelectorAll("[data-i18n]");
+  const elements = document.querySelectorAll("[data-i18n]");
   elements.forEach((el, i) => {
-    let text = el.innerHTML;
+    const text = el.innerHTML;
     let translate = json[text];
     el.innerHTML = translate;
     const variables = translate.match(/{({.*?})}/g);
@@ -12,7 +12,7 @@ export function i18n(json) {
           if (`{{${key}}}` === variable) {
             translate = translate.replace(
               `${variable}`,
-              new Function(`return '$'+(${value})`)()
+              new Function(`return '$'+(${value})`)(),
             );
             el.innerHTML = translate;
           }

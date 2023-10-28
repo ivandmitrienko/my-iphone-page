@@ -6,7 +6,7 @@ const path = require("path");
 module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
   output: {
-    path: __dirname + "/dist",
+    path: `${__dirname}/dist`,
     filename: "[name].js",
     assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
   },
