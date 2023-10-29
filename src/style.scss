@@ -173,11 +173,6 @@ body {
       height: calc(var(--vh, 1vh) * 21.98);
       border-radius: 10.8px;
       color: #fff;
-      
-      & span {
-        width: 5rem;
-        height: 1.7rem;
-      }
     }
   }
   
@@ -195,7 +190,6 @@ body {
       
       & div:nth-child(2) {
         text-align: left;
-        max-width: 4.3rem;
       }
       
       & span {
@@ -224,7 +218,7 @@ body {
         position: absolute;
         top: -24%;
         right: 7%;
-        padding: 2px 21px 3px;
+        padding: 2px 0 3px;
         max-width: 7.4rem;
         width: 100%;
         color: #141131;
@@ -267,7 +261,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 70vw;
+    width: 75%;
     
     & > ul {
       display: flex;
@@ -290,7 +284,7 @@ h1 {
   font-variation-settings: "wght" 860;
   text-align: center;
   color: white;
-  font-size: 42px;
+  font-size: 2.625rem;
   text-shadow: 0 0 3rem rgba(4 3 26 / 83%);
   line-height: 46px;
   margin: 10vh 0 5vh;
