@@ -1,6 +1,14 @@
 import i18next from "i18next"
+import { changeSizeOfFont } from "./localTranslations/changeSizeOfFont"
 
 export function translateUseLibrary (t) {
+  const language = (
+    window.navigator.userLanguage || window.navigator.language
+  ).substr(0, 2)
+  // eslint-disable-next-line no-constant-condition
+  if (language === "de" || "es" || "pt" || "fr") {
+    changeSizeOfFont(language)
+  }
   document.querySelector("h1").innerHTML = i18next.t(
     "Get Unlimited <br>Access"
   )
