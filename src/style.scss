@@ -1,0 +1,291 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (height <= 667px) {
+  #iphone-wrapper {
+    background: linear-gradient(
+        197deg,
+        rgb(0 0 0 / 0%) 10.43%,
+        rgb(21 5 52 / 64%) 30.66%,
+        rgb(0 0 0 / 86%) 37.66%,
+        rgb(9 1 25 / 95%) 45.57%,
+        rgb(0 0 0 / 95%) 77.38%,
+        rgb(5 1 14 / 95%) 94.32%
+      ),
+      top left/cover no-repeat url("./images/background/bg@2x.png");
+    
+      .iphone-app-images__item:first-child {
+      background: top left/cover no-repeat url("./images/Art/f1@2x.png");
+    }
+    
+    .iphone-app-images__item:nth-child(2) {
+      background: top left/cover no-repeat url("./images/Exclussive/f2@2x.png");
+    }
+
+    .iphone-app-images__item:last-child {
+      background: top left/cover no-repeat url("./images/Avatars/f3@2x.png");
+    }
+  }
+  
+  .iphone-app-cookies {
+    bottom: 1.5%;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3) and (height > 667px){
+  #iphone-wrapper {
+    background: linear-gradient(
+        197deg,
+        rgb(0 0 0 / 0%) 10.43%,
+        rgb(21 5 52 / 64%) 30.66%,
+        rgb(0 0 0 / 86%) 37.66%,
+        rgb(9 1 25 / 95%) 45.57%,
+        rgb(0 0 0 / 95%) 77.38%,
+        rgb(5 1 14 / 95%) 94.32%
+      ),
+      top left/cover no-repeat url("./images/background/bg@3x.png");
+  }
+
+  .iphone-app-images__item:first-child {
+    background: top left/cover no-repeat url("./images/Art/f1@3x.png");
+  }
+
+  .iphone-app-images__item:nth-child(2) {
+    background: top left/cover no-repeat url("./images/Exclussive/f2@3x.png");
+  }
+  
+  .iphone-app-images__item:last-child {
+    background: top left/cover no-repeat url("./images/Avatars/f3@3x.png");
+  }
+  
+  .button-continue {
+    margin-top: calc(var(--vh, 1vh) * 1.1);
+    margin-bottom: calc(var(--vh, 1vh) * 3.1);
+  }
+
+  .iphone-home-indicator {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    height: calc(var(--vh, 1vh) * 0.6);
+    border-radius: 100px;
+    background: #fff;
+    width: 34.4vw;
+  }
+  
+  .iphone-app-cookies {
+    bottom: 5%;
+  }
+}
+
+#iphone-wrapper {
+  font-family: "SF PRO", sans-serif;
+  position: relative;
+  height: 100%;
+  background-blend-mode: multiply;
+}
+
+.iphone-status-bar {
+  padding: 3px 6px 0;
+  width: 100%;
+  height: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3vh;
+  
+  & div {
+    color: white;
+    font-size: 0.75rem;
+    height: 100%;
+  }
+  
+  & div:not(.iphone-status-bar__time) {
+    font-variation-settings: "wght" 400;
+  }
+  
+  &__time {
+    font-variation-settings: "wght" 600;
+  }
+}
+
+.iphone-status-bar-group {
+  display: flex;
+  
+  &__signal {
+    width: 1rem;
+    background: url("./images/MobileSignal.png") no-repeat;
+  }
+
+  &__carrier {
+    line-height: 10px;
+  }
+
+  &__wifi {
+    width: 0.88rem;
+    background: url("./images/Wifi.png") no-repeat;
+  }
+
+  &__bluetooth {
+    width: 6px;
+    background: url("./images/Bluetooth.png") no-repeat;
+  }
+
+  &__procent,
+  &__carrier {
+    margin: 0 0.25rem;
+  }
+
+  &__battery {
+    width: 27px;
+    background: url("./images/Battery.png") no-repeat;
+  }
+}
+
+.iphone-app {
+  padding: 0 1.5rem;
+  
+  &-images {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: calc(var(--vh, 1vh) * 5.9);
+    
+    & &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 11px 7px;
+      font-variation-settings: "wght" 400;
+      font-size: 11px;
+      width: 27.85vw;
+      height: calc(var(--vh, 1vh) * 21.98);
+      border-radius: 10.8px;
+      color: #fff;
+    }
+  }
+  
+  &-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--vh, 1vh) * 1);
+    
+    & > button {
+      font-family: "SF PRO", sans-serif;
+      width: 100%;
+      height: 3.5rem;
+      border-radius: 2rem;
+      border: none;
+      
+      & div:nth-child(2) {
+        text-align: left;
+      }
+      
+      & span {
+        display: block;
+      }
+      
+      & .access__price {
+        font-weight: 400;
+        opacity: 0.7;
+      }
+      
+      & .access {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        flex-grow: 1;
+        
+        & .access__period {
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+      }
+
+      & .additional-button {
+        display: block;
+        position: absolute;
+        top: -24%;
+        right: 7%;
+        padding: 2px 0 3px;
+        max-width: 7.4rem;
+        width: 100%;
+        color: #141131;
+        font-family: Roboto,sans-serif;
+        font-variation-settings: "wght" 700;
+        font-size: 13px;
+        text-transform: uppercase;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 1px 6px 0 rgba(0 0 0 / 50%);
+      }
+    }
+
+    & > .subscribe-button {
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: rgba(255 255 255 / 10%);
+      color: #fff;
+      font-size: 16px;
+      line-height: normal;
+      padding: 0 3.5rem 0 1.5rem;
+    }
+    
+    & > .active-button {
+      border: 1px solid #fff;
+      background: rgba(255 255 255 / 30%);
+    }
+    
+    & button:last-child {
+      background: rgb(255 255 255);
+      font-variation-settings: "wght" 590;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      color: #070b33;
+    }
+  }
+
+  &-cookies {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    
+    & > ul {
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+      
+      & > li > a {
+        text-decoration: none;
+        color: rgba(255 255 255 / 50%);
+        font-size: 0.78rem;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.577px;
+      }
+    }
+  }
+}
+
+h1 {
+  font-variation-settings: "wght" 860;
+  text-align: center;
+  color: white;
+  font-size: 2.625rem;
+  text-shadow: 0 0 3rem rgba(4 3 26 / 83%);
+  line-height: 46px;
+  margin: 10vh 0 5vh;
+}
