@@ -5,8 +5,8 @@ export function translateUseLibrary (t) {
   const language = (
     window.navigator.userLanguage || window.navigator.language
   ).substr(0, 2)
-  // eslint-disable-next-line no-constant-condition
-  if (language === "de" || "es" || "pt" || "fr") {
+  const resizeLanguages = ["pt", "fr", "es", "de"]
+  if (resizeLanguages.includes(language)) {
     changeSizeOfFont(language)
   }
   document.querySelector("h1").innerHTML = i18next.t(

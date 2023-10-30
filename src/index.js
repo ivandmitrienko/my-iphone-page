@@ -10,8 +10,7 @@ import { searchLanguagePage } from "./utility/searchLanguagePage.js"
 document.addEventListener("DOMContentLoaded", () => {
   addClickListenerToContinueBtn()
   addClickListenerToSubscribeBtn()
-  // eslint-disable-next-line no-unused-expressions
-  clock
+  clock()
   init100vh()
   searchLanguagePage()
   // i18nFromLibrary()
